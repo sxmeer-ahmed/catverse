@@ -1,0 +1,74 @@
+{
+  "name": "catverse",
+  "displayName": "CatVerse🐱",
+  "description": "A mini TV 📺 that displays the author's mood through Meme Cats 😹",
+  "publisher": "sameerahmed",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#191919",
+    "theme": "dark"
+  },
+  "categories": [
+    "Testing","Visualization","Other","Programming Languages"
+  ],
+  "activationEvents": [
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "custom-activitybar",
+          "title": "CatVerse",
+          "icon": "assets/logo_bito.svg"
+        }
+      ]
+    },
+    "views": {
+      "custom-activitybar": [
+        {
+          "type": "webview",
+          "id": "catverse.openview",
+          "name": "CatVerse",
+          "contextualTitle": "CatVerse"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "catverse.openview.focus",
+        "title": "Open Sidebar",
+        "category": "CatVerse",
+        "icon": "$(clear-all)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.3.0"
+  },
+  "dependencies": {
+    "play-sound": "^1.1.3"
+  }
+}
